@@ -115,44 +115,50 @@ namespace NAME
               
                 MyLibraryClass.PrintArrayMassiv(matrix);
             }
-            Task58();
+            
+            
+
+
+                        void Task54_1()
+						
+			{
+                int rows = 4;
+                int columns = 4;
+                int[,]matrix = new int[rows,columns];
+                MyLibraryClass.FillArrayMassivMinMax(matrix, 0, 10);
+                MyLibraryClass.PrintArrayMassiv(matrix);
+                int count = 0;
+
+                for (int i=0; i< rows; i++)
+                {
+                    int indexMinColumn=0;
+                    count =0;
+                    for (int j=0; j<columns; j++)
+                    {
+                        while (j<columns)
+                        {
+                            if (matrix[i,j]<matrix[i,indexMinColumn])
+                            {
+                                int temp = matrix[i,j];
+                                matrix[i,j]=matrix[i,indexMinColumn];
+                                matrix[i,indexMinColumn]=temp;
+                            }
+                            j++;
+                        }
+                        count++;
+                        indexMinColumn=0+count;
+                        j=0+count;
+                    }
+
+                }
+                
+                Console.WriteLine();
+                MyLibraryClass.PrintArrayMassiv(matrix);
+            }
+            Task54_1();
 
         }
     }
 }
 
 
-            // Task 54
-						
-			// 			{
-            //     int rows = 4;
-            //     int columns = 4;
-            //     int[,]matrix = new int[rows,columns];
-            //     MyLibraryClass.FillArrayMassivMinMax(matrix, 0, 10);
-            //     MyLibraryClass.PrintArrayMassiv(matrix);
-            //     int count = 0;
-
-            //     for (int i=0; i< rows; i++)
-            //     {
-            //         int indexMinColumn=0;
-            //         for (int j=0; j<columns; j++)
-            //         {
-            //             while (j<columns)
-            //             {
-            //                 if (matrix[i,j]<matrix[i,indexMinColumn])
-            //                 {
-            //                     int temp = matrix[i,j];
-            //                     matrix[i,j]=matrix[i,indexMinColumn];
-            //                     matrix[i,indexMinColumn]=temp;
-            //                 }
-            //                 j++;
-            //             }
-            //             count++;
-            //             indexMinColumn=0+count;
-            //             j=0+count;
-            //         }
-
-            //     }
-                
-            //     Console.WriteLine();
-            //     MyLibraryClass.PrintArrayMassiv(matrix);
